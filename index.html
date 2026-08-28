@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HFGM Consultoria — Inteligência artificial aplicada à gestão</title>
+<meta name="description" content="HFGM Consultoria e Treinamento: consultoria em inteligência artificial, automação de processos e treinamento corporativo. Belo Horizonte, MG.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --tinta:#0d1b1e;      /* azul-esverdeado quase preto */
+    --papel:#f7f8f6;      /* branco frio */
+    --sinal:#0f7a5c;      /* verde profundo */
+    --sinal-claro:#8fd0bd;
+    --cinza:#5b6663;
+    --linha:#d9dedb;
+    --display:'Sora',system-ui,sans-serif;
+    --corpo:'IBM Plex Sans',system-ui,sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--papel);color:var(--tinta);font-family:var(--corpo);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+
+  /* header */
+  header{border-bottom:1px solid var(--linha)}
+  .nav{display:flex;align-items:baseline;justify-content:space-between;padding:22px 0}
+  .logo{font-family:var(--display);font-weight:700;font-size:1.25rem;letter-spacing:-.02em;text-decoration:none}
+  .logo span{color:var(--sinal)}
+  .nav-links{display:flex;gap:28px;font-family:var(--mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em}
+  .nav-links a{text-decoration:none;color:var(--cinza)}
+  .nav-links a:hover,.nav-links a:focus-visible{color:var(--sinal)}
+
+  /* hero */
+  .hero{padding:96px 0 72px}
+  .eyebrow{font-family:var(--mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;color:var(--sinal);margin-bottom:22px}
+  h1{font-family:var(--display);font-weight:700;font-size:clamp(2.2rem,5.4vw,3.9rem);line-height:1.08;letter-spacing:-.03em;max-width:15ch}
+  h1 em{font-style:normal;color:var(--sinal)}
+  .hero p{margin-top:26px;max-width:52ch;color:var(--cinza);font-size:1.06rem}
+  .cta{display:inline-block;margin-top:36px;background:var(--tinta);color:var(--papel);font-family:var(--mono);font-size:.85rem;letter-spacing:.04em;text-decoration:none;padding:15px 26px;border-radius:3px;transition:background .2s}
+  .cta:hover,.cta:focus-visible{background:var(--sinal)}
+
+  /* assinatura: pipeline dado → decisão */
+  .pipeline{margin-top:72px;display:flex;align-items:center;gap:0;font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.1em;color:var(--cinza)}
+  .pipeline .node{display:flex;align-items:center;gap:10px;white-space:nowrap}
+  .pipeline .dot{width:9px;height:9px;border-radius:50%;border:2px solid var(--sinal);background:var(--papel);flex:none}
+  .pipeline .node:last-child .dot{background:var(--sinal)}
+  .pipeline .line{flex:1;height:1px;background:var(--linha);margin:0 14px;min-width:24px}
+
+  /* seções */
+  section{padding:84px 0;border-top:1px solid var(--linha)}
+  .sec-label{font-family:var(--mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;color:var(--sinal);margin-bottom:14px}
+  h2{font-family:var(--display);font-weight:600;font-size:clamp(1.5rem,3vw,2.1rem);letter-spacing:-.02em;max-width:24ch;margin-bottom:44px}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--linha);border:1px solid var(--linha)}
+  .card{background:var(--papel);padding:32px 28px}
+  .card h3{font-family:var(--display);font-weight:600;font-size:1.08rem;margin-bottom:12px;letter-spacing:-.01em}
+  .card p{color:var(--cinza);font-size:.95rem}
+
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+  .step .num{font-family:var(--mono);font-size:.78rem;color:var(--sinal);letter-spacing:.1em;display:block;margin-bottom:10px}
+  .step h3{font-family:var(--display);font-weight:600;font-size:1.05rem;margin-bottom:10px}
+  .step p{color:var(--cinza);font-size:.95rem}
+
+  .sobre p{max-width:62ch;color:var(--cinza)}
+  .sobre p + p{margin-top:18px}
+
+  /* contato */
+  .contato{background:var(--tinta);color:var(--papel);border-top:none}
+  .contato .sec-label{color:var(--sinal-claro)}
+  .contato h2{color:var(--papel);margin-bottom:20px}
+  .contato p{color:#b8c2be;max-width:52ch}
+  .email{display:inline-block;margin-top:30px;font-family:var(--display);font-weight:600;font-size:clamp(1.2rem,3vw,1.7rem);letter-spacing:-.01em;color:var(--papel);text-decoration:none;border-bottom:2px solid var(--sinal);padding-bottom:6px}
+  .email:hover,.email:focus-visible{color:var(--sinal-claro)}
+  .contato .meta{margin-top:44px;font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;color:#7d8a86;line-height:2}
+
+  footer{background:var(--tinta);color:#7d8a86;font-family:var(--mono);font-size:.74rem;letter-spacing:.05em;border-top:1px solid #1e2f33}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:22px;padding-bottom:22px}
+
+  /* entrada suave */
+  @media (prefers-reduced-motion:no-preference){
+    .hero>*{opacity:0;transform:translateY(12px);animation:sobe .7s cubic-bezier(.2,.7,.2,1) forwards}
+    .hero>*:nth-child(2){animation-delay:.08s}
+    .hero>*:nth-child(3){animation-delay:.16s}
+    .hero>*:nth-child(4){animation-delay:.24s}
+    .hero>*:nth-child(5){animation-delay:.4s}
+    @keyframes sobe{to{opacity:1;transform:none}}
+  }
+  :focus-visible{outline:2px solid var(--sinal);outline-offset:3px}
+
+  @media (max-width:760px){
+    .nav-links{display:none}
+    .hero{padding:64px 0 56px}
+    .pipeline{flex-wrap:wrap;gap:12px}
+    .pipeline .line{display:none}
+    .cards,.steps{grid-template-columns:1fr}
+    section{padding:64px 0}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#">HFGM<span>.</span></a>
+    <nav class="nav-links" aria-label="Seções">
+      <a href="#servicos">Serviços</a>
+      <a href="#metodo">Método</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <p class="eyebrow">HFGM Consultoria e Treinamento · Belo Horizonte</p>
+    <h1>Inteligência artificial aplicada à <em>gestão</em>.</h1>
+    <p>Consultoria enxuta para empresas que querem adotar IA com critério: diagnóstico dos processos, implementação de automações e treinamento das equipes.</p>
+    <a class="cta" href="mailto:contato@hfgmconsultoria.com.br">contato@hfgmconsultoria.com.br →</a>
+    <div class="pipeline" aria-hidden="true">
+      <span class="node"><span class="dot"></span>processo</span><span class="line"></span>
+      <span class="node"><span class="dot"></span>automação</span><span class="line"></span>
+      <span class="node"><span class="dot"></span>equipe treinada</span>
+    </div>
+  </div>
+
+  <section id="servicos">
+    <div class="wrap">
+      <p class="sec-label">Serviços</p>
+      <h2>Três frentes, um objetivo: IA que funciona no seu processo real.</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Diagnóstico e estratégia</h3>
+          <p>Mapeamento dos processos da empresa e seleção dos casos de uso de IA com retorno concreto, com um plano de adoção priorizado.</p>
+        </div>
+        <div class="card">
+          <h3>Automação e implementação</h3>
+          <p>Desenho e implantação de fluxos com IA generativa integrados às ferramentas que a empresa já usa, do piloto à operação.</p>
+        </div>
+        <div class="card">
+          <h3>Treinamento corporativo</h3>
+          <p>Capacitação prática das equipes para uso produtivo e seguro de IA no dia a dia, com material adaptado à realidade de cada área.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="metodo">
+    <div class="wrap">
+      <p class="sec-label">Método</p>
+      <h2>Do diagnóstico à autonomia da sua equipe.</h2>
+      <div class="steps">
+        <div class="step">
+          <span class="num">01 — Entender</span>
+          <h3>Imersão no processo</h3>
+          <p>Antes de falar de tecnologia, entendemos como o trabalho acontece hoje e onde estão os gargalos que valem a pena atacar.</p>
+        </div>
+        <div class="step">
+          <span class="num">02 — Implantar</span>
+          <h3>Piloto e operação</h3>
+          <p>Implementamos em ciclos curtos, medindo resultado em cada etapa. O que não gera valor mensurável não avança.</p>
+        </div>
+        <div class="step">
+          <span class="num">03 — Transferir</span>
+          <h3>Autonomia do cliente</h3>
+          <p>Documentação e treinamento para que a operação continue com a equipe da empresa, sem dependência da consultoria.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre" class="sobre">
+    <div class="wrap">
+      <p class="sec-label">Sobre</p>
+      <h2>Consultoria independente, sediada em Belo Horizonte.</h2>
+      <p>A HFGM Consultoria e Treinamento atua na interseção entre gestão empresarial e inteligência artificial. Trabalhamos com um portfólio deliberadamente pequeno de clientes, em projetos de escopo fechado e resultado verificável.</p>
+      <p>Nossa convicção: IA não é um projeto de tecnologia, é um projeto de gestão. A ferramenta muda; o que fica é o processo redesenhado e a equipe capaz de operá-lo.</p>
+    </div>
+  </section>
+
+  <section id="contato" class="contato">
+    <div class="wrap">
+      <p class="sec-label">Contato</p>
+      <h2>Vamos conversar sobre o seu processo.</h2>
+      <p>Atendemos por e-mail. Descreva em poucas linhas o contexto da empresa e o problema que quer resolver.</p>
+      <a class="email" href="mailto:contato@hfgmconsultoria.com.br">contato@hfgmconsultoria.com.br</a>
+      <p class="meta">
+        HFGM Consultoria e Treinamento Ltda<br>
+        CNPJ 63.627.496/0001-48<br>
+        Belo Horizonte · MG · Brasil
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 HFGM Consultoria e Treinamento Ltda</span>
+    <span>CNPJ 63.627.496/0001-48</span>
+  </div>
+</footer>
+
+</body>
+</html>
